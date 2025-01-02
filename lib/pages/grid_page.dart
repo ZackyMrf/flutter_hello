@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_hello/pages/detail_page.dart';
 
 class GridPage extends StatelessWidget {
   const GridPage({super.key});
@@ -6,6 +7,7 @@ class GridPage extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     List<String> data = <String>["Agus", "Budi", "Chalie", "Dodi", "Elsa"];
+    List<String> alamat = <String>["batang", "semarang", "pekalongan", "Purwokerto", "majalengka"];
 
     return Scaffold(
       appBar: AppBar(
@@ -21,9 +23,23 @@ class GridPage extends StatelessWidget {
           padding: const EdgeInsets.all(8),
           itemCount: data.length,
           itemBuilder: (context, index){
-          return Container(
-            child: Text(data[index]),
-            color: Colors.blue,
+          return InkWell(
+            onTap: () {
+              Navigator.push(
+                context,
+                MaterialPageRoute(
+                  builder: (context) => DetailPage(
+                    nama: data[index], 
+                    urutan: index,
+                    alamat: alamat[index],
+                    ),
+                ),
+              );
+            },
+            child: Container(
+              child: Text(data[index]),
+              color: Colors.blue,
+            ),
           );
         }
         ),

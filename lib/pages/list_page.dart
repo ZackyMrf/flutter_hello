@@ -7,6 +7,7 @@ class ListPage extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     List<String> data = <String>["Agus", "Budi", "Chalie", "Dodi", "Elsa"];
+    List<String> alamat = <String>["batang", "semarang", "pekalongan", "Purwokerto", "majalengka"];
     return Scaffold(
       appBar: AppBar(
         title: const Text("Halaman ListView"),
@@ -20,7 +21,10 @@ class ListPage extends StatelessWidget {
               Navigator.push(
                 context,
                 MaterialPageRoute(
-                  builder: (context) => const DetailPage(),
+                  builder: (context) => DetailPage(
+                  nama: data[index], 
+                  urutan: index,
+                  alamat: alamat[index],),
                 ),
               );
             },
@@ -30,7 +34,7 @@ class ListPage extends StatelessWidget {
                   backgroundColor: Colors.blue,
                 ),
                 title: Text(data[index]),
-                subtitle: Text("Ini Adalah Data ${data[index]}"),
+                subtitle: Text("alamatnya ada di ${alamat[index]}"),
                 trailing: const Icon(Icons.more_vert),
               ),
             ),

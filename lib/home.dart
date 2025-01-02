@@ -58,7 +58,7 @@ class Home extends StatelessWidget {
                   )
                 );
              },
-             child: const Text("HALAMAN INTERAKSI"),
+             child: const Text("HALAMAN INTERAKSI PUSH"),
              ),
              const SpaceH10(),
              ElevatedButton(
@@ -70,7 +70,7 @@ class Home extends StatelessWidget {
                   )
                 );
              },
-             child: const Text("HALAMAN INTERAKSI"),
+             child: const Text("HALAMAN LIST"),
              )
           ],
         ),
